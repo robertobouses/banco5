@@ -1,8 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/robertobouses/banco5/movimientos"
+)
 
 func main() {
-
-	fmt.Println("hELLO")
+	valor := movimientos.Cliente{}
+	valor.Formulario()
+	fmt.Println("Desconexión")
 }
