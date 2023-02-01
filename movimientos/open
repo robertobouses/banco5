@@ -1,0 +1,65 @@
+package movimientos
+
+import "fmt"
+
+type Cliente struct {
+	Dni      int
+	Nombre   string
+	Apellido string
+}
+
+func (c *Cliente) Formulario() []Cliente {
+
+	var InventarioClientes []Cliente
+
+	fmt.Println("FORUMULARIO DE ADMISIÓN DE DATOS")
+
+	fmt.Println("Indica el DNI, el Nombre y el Apellido del Cliente")
+	fmt.Scanln(&c.Dni)
+	fmt.Scanln(&c.Nombre)
+	fmt.Scanln(&c.Apellido)
+
+	Cliente1 := Cliente{
+		Dni:      c.Dni,
+		Nombre:   c.Nombre,
+		Apellido: c.Apellido,
+	}
+
+	InventarioClientes = append(InventarioClientes, Cliente1)
+	return InventarioClientes
+}
+package movimientos
+
+import "fmt"
+
+type CuentaBancaria struct {
+	movimiento int
+	saldo      int
+}
+
+func (c CuentaBancaria) Cargo(monto int, InventarioClientes []Cliente) {
+	c.saldo += monto
+	fmt.Println("El saldo es", InventarioClientes, c.saldo)
+
+}
+package main
+
+import (
+	"fmt"
+
+	"github.com/robertobouses/banco5/movimientos"
+)
+
+func main() {
+	var monto int
+
+	dato := movimientos.Cliente{}
+	InventarioClientes := dato.Formulario()
+	valor := movimientos.CuentaBancaria{}
+
+	fmt.Println("indica monto de la operación")
+	fmt.Scanln(&monto)
+	valor.Cargo(monto, InventarioClientes)
+
+	fmt.Println("Desconexión")
+}
