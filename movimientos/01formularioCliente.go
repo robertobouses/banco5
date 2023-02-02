@@ -10,7 +10,7 @@ type Cliente struct {
 	Apellido string
 }
 
-func (c *Cliente) Formulario() map[int]Cliente {
+func (c *Cliente) FormularioCliente() map[int]Cliente {
 
 	var InventarioClientes map[int]Cliente
 	InventarioClientes = make(map[int]Cliente)
