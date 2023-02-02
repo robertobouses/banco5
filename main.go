@@ -13,6 +13,7 @@ func main() {
 	valor := movimientos.CuentaBancaria{}
 
 	InventarioClientes := dato.FormularioCliente()
+	InventarioCuentaBancarias = valor.FormularioCuenta(movimientos.Dni, InventarioCuentaBancarias)
 
 	for {
 
